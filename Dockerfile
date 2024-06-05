@@ -14,4 +14,4 @@ RUN case "${TARGETPLATFORM}" in \
 
     ADD . .
 
-CMD ["sh", "run.sh"]
+CMD ["sh", "setup.sh"]
