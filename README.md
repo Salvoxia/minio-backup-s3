@@ -39,7 +39,7 @@ spec:
         spec:
           containers:
             - name: minio-backup-s3
-              image: git.local.salvoxia.de/blindfish/minio-backup-s3:latest
+              image: salvoxia/minio-backup-s3:latest
               env:
                 - name: MC_SOURCE_EP_ACCESS_KEY
                   value: xxxxxxxxxxxxxxxxxx
