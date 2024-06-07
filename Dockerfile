@@ -1,6 +1,7 @@
 FROM alpine:3.20
 LABEL maintainer="Salvoxia <salvoxia@blindfish.info>"
 ARG TARGETPLATFORM
+RUN echo "I'm building for $TARGETPLATFORM"
 # Determine Minio Client Architecture sub-URL
 RUN case "${TARGETPLATFORM}" in \
         "linux/amd64")    MC_ARCH=linux-amd64  ;; \
@@ -12,6 +13,5 @@ RUN case "${TARGETPLATFORM}" in \
     wget https://dl.min.io/client/mc/release/${MC_ARCH}/mc; \
     chmod +x ./mc
 
-    ADD . .
-
+ADD . .
 CMD ["sh", "setup.sh"]
